@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "کالا / خدمت";
+
+    {
+        Layout = "~/Views/Shared/_User.cshtml";
+    }
+}
+
+
+@section ActionButtons
+{
+    <button class="btn btn-primary action-create">@ViewData["Title"] جدید</button>
+   
+}
+
+
+<div class="card-datatable">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="tableProductIndex" class="table table-striped nowrap" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>عملیات</th>
+                        <th>نام کالا / خدمت</th>
+                        <th>شناسه کالا / خدمت</th>
+                        <th>واحد</th>
+                        <th>درصد مالیات</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script src="/js/pages/product/index.js?rndstr=@DateTime.Now"></script>
+}

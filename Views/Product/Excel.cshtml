@@ -1,0 +1,25 @@
+﻿<div class="modal-header">
+    <h5 class="modal-title">ثبت کالا / خدمت با اکسل</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <div class="form-body">
+        <form action="#" id="formProductExcel">
+            <div class="row g-3">
+                <div class="col-md-12">
+                    <label for="formFile" class="form-label">فایل اکسل</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="submit" form="formProductExcel" id="buttonProductExcelReg" class="btn btn-success">ثبت</button>
+</div>
+<script>
+    var educationInformationModal = '@Context.Request.Query["modal"]';
+    var educationInformationReload = '@Context.Request.Query["reload"]';
+</script>
+<script src="/js/pages/product/excel.js?rndstr=@DateTime.Now"></script>

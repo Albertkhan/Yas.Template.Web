@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "صفحه اصلی";
+    Layout = "~/Views/Shared/_User.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="alert alert-solid-info" role="alert">
+        سامانه ارسال صورتحساب الکترونیکی یاس فاکتور
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial rounded-circle bg-label-info"><i class="bx bx-message-square-detail fs-3"></i></span>
+                    </div>
+                    <span class="d-block mb-1 text-nowrap">تعداد کل صورتحسابها</span>
+                    <a href="/Head/Index?Action=StatusAll"> <h2 class="mb-n3">@ViewBag.TotalInvoice</h2></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial rounded-circle bg-label-success"><i class="bx bx-message-square-detail fs-3"></i></span>
+                    </div>
+                    <span class="d-block mb-1 text-nowrap">ارسال موفق</span>
+                    <a href="/Head/Index?Action=StatusSuccess"> <h2 class="mb-n3">@ViewBag.SuccessSend</h2></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial rounded-circle bg-label-dark"><i class="bx bx-message-square-detail fs-3"></i></span>
+                    </div>
+                    <span class="d-block mb-1 text-nowrap">در انتظار ارسال</span>
+                    <a href="/Head/Index?Action=StatusInSend">  <h2 class="mb-n3">@ViewBag.PendingSend</h2></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial rounded-circle bg-label-warning"><i class="bx bx-message-square-detail fs-3"></i></span>
+                    </div>
+                    <span class="d-block mb-1 text-nowrap">در انتظار پیگیری</span>
+                    <a href="/Head/Index?Action=StatusInSubmit"><h2 class="mb-n3">@ViewBag.ProcessingSend</h2></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial rounded-circle bg-label-danger"><i class="bx bx-message-square-detail fs-3"></i></span>
+                    </div>
+                    <span class="d-block mb-1 text-nowrap">ارسال دارای خطا</span>
+                    <a href="/Head/Index?Action=StatusInError"><h2 class="mb-n3">@ViewBag.ErrorSend</h2></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="avatar avatar-md mx-auto mb-3">
+                        <span class="avatar-initial rounded-circle bg-label-warning"><i class="bx bx-message-square-detail fs-3"></i></span>
+                    </div>
+
+                    <span class="d-block mb-1 text-nowrap">هشدار (کمتر از 3 روز)</span>
+                    <a href="/Head/Index?Action=StatusInWarning"><h2 class="mb-n3">@ViewBag.WarningSend</h2></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-4 col-sm-12 mb-3">
+            <a href="/Head/Index?Action=New" style="width:100%" class="btn btn-info">صدور فاکتور</a>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-3">
+            <button type="button" action-url="/Head/Index" form="formFieldHelpInformation" id="buttonFieldHelpInformationReg" style="width:100%" class="btn btn-info action-invoice-show">مشاهده صورتحساب </button>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-3">
+            <a href="/Head/Index?Action=Excel" style="width:100%" class="btn btn-info">بارگذاری اکسل</a>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script src="/js/pages/home/user.js?rndstr=@DateTime.Now"></script>
+}

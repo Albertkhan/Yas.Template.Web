@@ -1,0 +1,40 @@
+﻿.kanban-title-board{
+    cursor:pointer
+}
+
+.kanban-title-board:hover {
+    text-decoration:underline;
+    color:blue;
+}
+
+.kanban-title-button {
+    margin: 10px;
+}
+
+.kanban-drag {
+    height: 60vh;
+    /*height:300px;*/
+    overflow: scroll;
+}
+
+.kanban-board
+{
+    float:right;
+    margin:10px;
+    border-style:groove;
+    background-color:transparent;
+}
+
+.kanban-board header
+{
+    border-style:ridge;
+    border-color:white;
+    background-color:gold;
+    margin:20px;
+}
+
+.kanban-item {
+    border-width: thin;
+    border-style: solid;
+    border-color: cadetblue;
+}

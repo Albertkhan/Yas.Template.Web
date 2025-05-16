@@ -1,0 +1,42 @@
+﻿
+
+<div class="modal-header">
+    <h5 class="modal-title">تعریف کالا / خدمت</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <div class="form-body">
+        <form action="#" id="formProductInformation">
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label class="form-label" for="ProductName">نام کالا / خدمت</label>
+                    <input id="productName" name="ProductName" class="form-control" type="text" autocomplete="off" maxlength="50" />
+                </div>
+                <div class="col-md-4 form-group">
+                    <label class="form-label" for="ProductNumber">شناسه کالا / خدمت</label>
+                    <input id="productNumber" name="ProductNumber" class="form-control number-mask" type="text" autocomplete="off" maxlength="13" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="UnitName">واحد</label>
+                    @Html.DropDownList("unitName", @ViewBag.unitName as List<SelectListItem>, "انتخاب کنید", new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="TaxValue">درصد مالیات</label>
+                    <input id="taxValue" value=0 name="TaxValue" class="form-control" type="number" autocomplete="off" min=0 max=100 maxlength="3" dir="ltr" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="submit" form="formProductInformation" id="buttonProductInformationReg" class="btn btn-info">ثبت</button>
+</div>
+<script src="/js/custom/core.js?rndstr=@DateTime.Now"></script>
+<script>
+var ProductInformationRecordId = '@Context.Request.Query["id"]';
+var ProductInformationModal = '@Context.Request.Query["modal"]';
+var ProductInformationReload = '@Context.Request.Query["reload"]';
+</script>
+<script src="/js/pages/product/information.js?rndstr=@DateTime.Now"></script>
+
